@@ -1,0 +1,29 @@
+{
+  "name": "alarm-01",
+  "version": "0.0.0",
+  "description": "Demo alarm",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "authors": [
+    "ihork@wix.com"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "scripts/lib"
+  ],
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "react": "~0.12.1",
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.15"
+  },
+  "homepage": "https://github.com/Iain19/react-karma-alarm-01"
+}
