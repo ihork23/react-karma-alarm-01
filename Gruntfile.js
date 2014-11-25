@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				banner: "/* ihork@wix.com */\n"
 			},
 			target: {
-				src: "src/app.js",
+				src: "dist/app.js",
 				dest: "dist/app.min.js"
 			}
 		},
@@ -20,20 +20,21 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		concat: {
+			main: {
+				src: ['scripts/*.js'],
+				dest: 'dist/app.js'
+			}
+		},
 		jasmine: {
 			all: {
 				src: [
 					'scripts/app.js'
 				],
 				options: {
-					//amd: true,
-					//vendor: 'scripts/lib/**/*.js',
 					specs: 'scripts/spec/*spec.js',
 					template: require('grunt-template-jasmine-requirejs'),
 					templateOptions: {
-						// requireConfig: {
-						// 	baseUrl: './scripts'
-						// }//,
 						requireConfigFile: 'scripts/config.js'
 					}
 				}
@@ -46,17 +47,14 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: ['scripts/*.js'],
-				tasks: ['jasmine:all']
-			},
-			test: {
-				files: ['scripts/*.js'],
-				tasks: ['jasmine:all']
+				tasks: ['concat', 'uglify']
 			}
 		}
 		
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-concat')
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');

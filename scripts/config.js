@@ -1,9 +1,9 @@
 requirejs.config({
 	baseUrl: 'scripts',
-	deps: ['render'],
+	deps: ['app'],
 	paths: {
 		lodash: 'lib/lodash/dist/lodash.min',
-		react: 'lib/react/react',
+		react: 'lib/react/react-with-addons',
         jquery: 'lib/jquery/dist/jquery'
 	}
 });

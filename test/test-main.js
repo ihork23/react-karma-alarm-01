@@ -17,7 +17,7 @@
         specFiles = [];
         for (var file in window.__karma__.files) {
             if (window.__karma__.files.hasOwnProperty(file)) {
-                if (/.*\/test\/spec\/.+_spec\.js$/.test(file)) {
+                if (/.*\/test\/spec\/.+\.spec\.js$/.test(file)) {
                     specFiles.push(file);
                 }
             }
@@ -31,8 +31,13 @@
             'require': 'scripts/lib/requirejs/require',
             'jquery': 'scripts/lib/jquery/dist/jquery',
             'lodash': 'scripts/lib/lodash/dist/lodash',
-            'react': 'scripts/lib/react/react',
-            'app': 'scripts/app'
+            'react': 'scripts/lib/react/react-with-addons',
+            'utils': 'scripts/utils',
+            'alarmItem': 'scripts/alarmItem',
+            'alarmList': 'scripts/alarmList',
+            'controlBar': 'scripts/controlBar',
+            'alarmModule': 'scripts/alarmModule',
+            'alarmBox': 'scripts/alarmBox'
         },
 
         // ask Require.js to load these files (all our tests)

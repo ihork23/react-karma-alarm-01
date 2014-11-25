@@ -1,4 +1,41 @@
 @import 'reset';
-.searchBox {
-	margin: 0 auto;
+@import 'window';
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+$alarmItemBack: #d3f2c0;
+
+.alarmBox {
+	margin: 20px auto;
+	width: 370px;
+	.controlBar {
+		button {
+			float: right;
+			color: green;
+		}
+		input {
+			margin-right: 3px;
+		}
+	}
+	.alarmList {
+		list-style-type: none;
+		padding: 0;
+		.alarmItem {
+			padding: 3px 10px;
+			text-align: center;
+			display: block;
+			border: 1px solid $common-back;
+			@include border-radius(5px);
+			background: $alarmItemBack;
+			.removeAlarm {
+				float: right;
+				color: #ccc;
+			}
+		}
+	}
 }

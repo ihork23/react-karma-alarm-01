@@ -11,7 +11,7 @@ module.exports = function(config) {
             { pattern: 'scripts/lib/requirejs/require.js', included: false },
             { pattern: 'scripts/lib/jquery/dist/jquery.js', included: false },
             { pattern: 'scripts/lib/lodash/dist/lodash.js', included: false },
-            { pattern: 'scripts/lib/react/react.js', included: false },
+            { pattern: 'scripts/lib/react/react-with-addons.js', included: false },
 
             { pattern: 'scripts/*.js',  included: false },
             { pattern: 'test/spec/**/*.js', included: false },
@@ -24,11 +24,11 @@ module.exports = function(config) {
         ],
 
         preprocessors: {
-            'app/scripts/**/*.js': ['coverage']
+            'scripts/*.js': ['coverage']
         },
 
         // 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['spec'],
+        reporters: ['spec', 'coverage'],
 
         // [ LOG_DISABLE, LOG_ERROR, LOG_WARN, LOG_INFO, LOG_DEBUG ]
         logLevel: config.LOG_INFO,
